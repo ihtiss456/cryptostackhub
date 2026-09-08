@@ -442,7 +442,7 @@ A("crypto-compliance-for-startups","Crypto Compliance for Startups","tax",
   [S("Compliance is a launch requirement, not a later problem",
      "The most common fatal startup mistake in crypto: treating compliance as something to add after product-market fit. Regulators disagree, retroactively. Teams have faced enforcement for activities years old, and banking partners, investors and acquirers all conduct compliance due diligence. Build the skeleton before you need it."),
    S("The foundational questions",
-     "list:Are you a money transmitter / VASP? — custody or exchange of customer funds usually triggers licensing|What jurisdictions do you serve? — 'we're decentralized' is not a jurisdiction strategy|Do you touch securities? — token design can create securities-law exposure|What's your AML/KYC posture? — even non-custodial products face sanctions-screening expectations for front-ends|How will you handle taxes? — your entity's crypto treasury, token compensation, and revenue all need infrastructure"),
+     "list:Are you a money transmitter / VASP? — custody or exchange of customer funds usually triggers licensing|What jurisdictions do you serve? — 'we're decentralized' is not a jurisdiction strategy|Do you touch securities? — token design can create securities-law exposure|What's your AML/KYC posture? �� even non-custodial products face sanctions-screening expectations for front-ends|How will you handle taxes? — your entity's crypto treasury, token compensation, and revenue all need infrastructure"),
    S("The minimum viable compliance stack",
      "list:Legal opinion on your token/activity classification in target markets|Entity structure that matches your regulatory footprint|AML policy + sanctions screening tooling from day one of handling funds|Accounting stack that handles crypto natively (subledger + tax engine)|Record-retention discipline — assume every decision will be reviewed in 3 years"),
    S("Budget and sequencing reality",
@@ -621,7 +621,7 @@ def author_url(author_key):
 
 def seo_head(path, title, desc, breadcrumbs, article=None, profile=None):
     canonical = "https://cryptostackhub.com" + (path if path.endswith("/") or path == "/" else path + "/")
-    image = "https://cryptostackhub.com/assets/images/og-default.png"
+    image = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMAGE1-YZ0juMeTaU0SKgH2ReCpoWiDNaZzMo.png" if article and article["slug"] == "what-is-defi" else "https://cryptostackhub.com/assets/images/og-default.png"
     crumbs_json = []
     for label, url in breadcrumbs:
         item_url = "https://cryptostackhub.com" + (url if url.endswith("/") or url == "/" else url + "/")
@@ -839,6 +839,8 @@ def render_article(a, idx):
                 blocks.append(f"<p>{esc(b)}</p>")
         secs_html.append(f'<h2 id="s{i}">{esc(s["title"])}</h2>' + "\n".join(blocks))
     body = "\n".join(secs_html)
+    if a["slug"] == "what-is-defi":
+        body = f'''<figure class="article-figure"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMAGE1-YZ0juMeTaU0SKgH2ReCpoWiDNaZzMo.png" alt="Ethereum and traditional finance connected by a question mark, illustrating the shift from legacy finance to DeFi"><figcaption>DeFi connects programmable blockchain networks with familiar financial services.</figcaption></figure>{body}<figure class="article-figure"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMAGE2-RKeka3RO908nO14SgPd2vTOTl5KWSq.png" alt="Centralized exchange versus decentralized exchange comparison showing custody, KYC, security and fee differences"></figure><figure class="article-figure"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMAGE3-vvpu5IffN2kXgPsWifHLo2Mh1zD0JB.png" alt="Global DeFi network with an Ethereum symbol connected to wallets, users, payments and lending"></figure><figure class="article-figure"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMAGE4-0INFCrVTIsLsupgoprfsUE0D9B3xuN.png" alt="Ethereum connected to a bank and legal scales, representing open finance and regulation questions"></figure>'''
 
     # related: same category first, then others
     rel = [x for x in ARTICLES if x["cat"] == a["cat"] and x["slug"] != a["slug"]][:3]
@@ -850,6 +852,9 @@ def render_article(a, idx):
     prev_a = cat_list[(pos - 1) % len(cat_list)]
     next_a = cat_list[(pos + 1) % len(cat_list)]
 
+    faq = [{"@type":"Question","name":"What does DeFi mean?","acceptedAnswer":{"@type":"Answer","text":"DeFi means decentralized finance: financial applications built on public blockchains and governed by smart contracts rather than traditional intermediaries."}},{"@type":"Question","name":"What can you do with DeFi?","acceptedAnswer":{"@type":"Answer","text":"People use DeFi for token swaps, lending, borrowing, stablecoin payments, staking and other programmable financial strategies."}},{"@type":"Question","name":"Is DeFi safe?","acceptedAnswer":{"@type":"Answer","text":"DeFi carries smart-contract, market, oracle, governance and custody risks. Use established protocols, verify addresses and never risk more than you can afford to lose."}}]
+    faq_schema = '<script type="application/ld+json">' + json.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faq}, ensure_ascii=False, separators=(",", ":")) + '</script>' if a["slug"] == "what-is-defi" else ""
+    faq_html = '<section class="faq"><h2 id="faq">Frequently asked questions</h2>' + "".join(f'<details><summary>{esc(item["name"])}</summary><p>{esc(item["acceptedAnswer"]["text"])}</p></details>' for item in faq) + '</section>' if a["slug"] == "what-is-defi" else ""
     html = f"""
 <section class="page-hero" style="padding-bottom:0">
   <div class="hero-grid"></div>
@@ -865,6 +870,8 @@ def render_article(a, idx):
     <article class="prose">
       <p class="lede">{esc(a['desc'])}</p>
       {body}
+      {faq_html}
+      {faq_schema}
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul>{"".join(f"<li>{esc(t)}</li>" for t in a['takeaways'])}</ul>

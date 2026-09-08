@@ -77,6 +77,8 @@ contract Vault {
 }</code></pre>
 <h2 id="s2">The mental model that matters</h2><ul><li>State is expensive — writing to storage is the costliest operation; design to minimize it</li><li>Everything is public — 'private' variables are readable by anyone running a node</li><li>Calls are transactions — they can fail, revert, and cost gas even when they fail</li><li>External calls are dangerous — every call to another contract is a potential reentrancy vector</li></ul>
 <h2 id="s3">Your learning path from here</h2><p>Start in the browser with Remix IDE, no setup required. Deploy to a testnet (Sepolia), break things, read other people's contracts on a block explorer. Then graduate to a local framework like Foundry or Hardhat, and finish every project with tests — the testing discipline is what separates hobbyists from professionals.</p>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>Solidity looks like JS but thinks like a database with money attached</li><li>Storage writes, visibility and reentrancy are the big mental shifts</li><li>Start in Remix on a testnet — free, fast, consequence-free</li><li>Tests and audits are not optional in smart contract development</li></ul>

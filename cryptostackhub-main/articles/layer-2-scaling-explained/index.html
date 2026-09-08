@@ -60,6 +60,8 @@
 <h2 id="s1">The two rollup families</h2><ul><li>Optimistic rollups (Arbitrum, Optimism, Base) — assume transactions are valid, with a 7-day fraud-proof window. EVM-equivalent, mature, but withdrawals to L1 take a week (bridges offer instant exits for a fee)</li><li>ZK rollups (zkSync, StarkNet, Polygon zkEVM) — every batch comes with a cryptographic validity proof. Faster finality, no challenge window, but proving is computationally heavy and full EVM equivalence is harder</li></ul>
 <h2 id="s2">What changes for developers</h2><p>Mostly, nothing — that is the point. Your Solidity code, Foundry toolchain and contract patterns port directly. The differences that matter: much lower gas means previously uneconomical designs (on-chain games, micro-transactions) become viable; cross-chain messaging replaces some intra-chain calls; and sequencer centralization is a real, if diminishing, consideration.</p>
 <h2 id="s3">Choosing an L2</h2><p>Evaluate: TVL and ecosystem depth, fraud/validity proof maturity, sequencer decentralization roadmap, data availability design, and bridge security — historically the weakest link, where billions have been lost.</p>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>L2s execute off-chain and inherit L1 security via proofs</li><li>Optimistic = fraud proofs + 7-day window; ZK = validity proofs + fast finality</li><li>Existing EVM code ports nearly unchanged</li><li>Bridge security is the systemic weak point to understand</li></ul>

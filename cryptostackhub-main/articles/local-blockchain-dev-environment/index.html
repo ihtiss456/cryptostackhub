@@ -78,6 +78,8 @@ contract Vault {
 <p>Alternative: Hardhat remains excellent, especially for TypeScript-heavy teams and its rich plugin ecosystem. The workflow below applies to both.</p>
 <h2 id="s2">The professional workflow</h2><ul><li>forge init — scaffold a project with src/, test/, and a config</li><li>anvil — spin up a local node with 10 funded accounts</li><li>forge test — run unit tests in milliseconds</li><li>anvil --fork-url &lt;RPC&gt; — fork mainnet to test against real protocols</li><li>forge script — deterministic, scriptable deployments</li></ul>
 <h2 id="s3">Habits that pay off immediately</h2><p>Pin your Solidity version. Write the test before the fix. Fork-test anything that touches an external protocol. And keep a .env discipline — never hardcode keys, never commit secrets, and use separate wallets for development and real funds.</p>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>Local nodes make iteration instant; forking makes tests realistic</li><li>Foundry (Forge/Anvil/Cast) is the modern default toolchain</li><li>Fork mainnet whenever your contracts touch external protocols</li><li>Key hygiene starts on day one — dev wallets and real wallets never mix</li></ul>

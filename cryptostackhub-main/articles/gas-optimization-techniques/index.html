@@ -60,6 +60,8 @@
 <h2 id="s1">The highest-impact techniques</h2><ul><li>Storage packing — order structs so multiple uint128/bool values share one 32-byte slot</li><li>Custom errors — revert with MyError() instead of require strings; saves deployment and runtime gas</li><li>calldata over memory — mark external function arrays as calldata to skip copying</li><li>unchecked math — skip overflow checks where logic guarantees safety</li><li>Immutable &amp; constant — baked into bytecode instead of stored</li><li>Cache storage reads — reading the same slot twice costs real money</li></ul>
 <h2 id="s2">Techniques with honest trade-offs</h2><p>Assembly (Yul) can cut hot-path costs dramatically but destroys readability and auditability. Bit-packing and compression save gas per call while increasing code complexity and bug surface. Rule of thumb: optimize the functions users call every block, not the ones an admin calls once a year.</p>
 <h2 id="s3">Measure, don't guess</h2><p>Use forge test --gas-report and snapshots to quantify every change. An 'optimization' that saves 200 gas but doubles audit time is a loss. The best gas optimization is architectural: do less on-chain, batch operations, and push computation off-chain with on-chain verification.</p>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>Storage is the enemy — writes cost ~100x more than computation</li><li>Packing, custom errors and calldata are the safe wins</li><li>Assembly is a scalpel, not a hammer — document every line</li><li>Profile with gas reports; optimize hot paths only</li></ul>

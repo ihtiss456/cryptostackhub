@@ -77,6 +77,8 @@ contract Vault {
 }</code></pre>
 <h2 id="s2">Step 2 — the frontend</h2><p>Modern stack: a React app with wagmi + viem for chain interactions and a wallet connector for the connect button. The flow is always the same — connect wallet, read contract state with a call (free), write state with a transaction (costs gas, needs a signature), then listen for the receipt and update the UI.</p>
 <h2 id="s3">Step 3 — deployment checklist</h2><ul><li>Full test coverage on core logic — 90%+ on anything holding funds</li><li>Static analysis (Slither) and, for anything serious, an external audit</li><li>Deploy to testnet, then do a real user walkthrough with fresh eyes</li><li>Verify the contract source on the block explorer</li><li>Mainnet deploy from a dedicated deployer wallet, with keys stored properly</li><li>Monitor: set up alerts for unusual contract events from day one</li></ul>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>dApp = contracts + frontend + wallet signing; the frontend never custodies</li><li>wagmi/viem make the web3 frontend feel like normal React</li><li>Testnet walkthroughs catch what unit tests miss</li><li>Deployment is the beginning — monitoring and key security are forever</li></ul>

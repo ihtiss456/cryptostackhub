@@ -60,6 +60,8 @@
 <h2 id="s1">The testing pyramid</h2><ul><li>Unit tests — every function, every revert path, every access-control boundary. Baseline: 90%+ coverage on fund-handling code</li><li>Fuzz tests — let the framework throw thousands of random inputs at your functions; edge cases you never imagined will surface</li><li>Invariant tests — define properties that must ALWAYS hold ('total deposits == contract balance') and let the fuzzer try to violate them through random call sequences</li><li>Fork tests — run against real mainnet state to verify integrations with live protocols</li><li>Static analysis — Slither in CI catches known patterns automatically</li></ul>
 <h2 id="s2">Writing invariants that matter</h2><p>Good invariants express economic truth, not implementation detail: 'no user can withdraw more than they deposited plus yield', 'the sum of balances equals totalSupply', 'a paused contract moves no funds'. When an invariant breaks in fuzzing, you have found a real exploit path — before an attacker does.</p>
 <h2 id="s3">The culture shift</h2><p>Test-first development is not a luxury in this domain; it is the cost of admission. The time you 'save' skipping fuzzing will be repaid, with interest, either to auditors or to exploiters.</p>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>Assume an adversary with unlimited capital and your full source code</li><li>Fuzzing and invariant tests find what unit tests never will</li><li>Fork-test every external protocol integration</li><li>Invariants should encode economic truth, not implementation</li></ul>

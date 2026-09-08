@@ -60,6 +60,8 @@
 <h2 id="s1">The constant product formula</h2><p>The classic AMM keeps the product of its two reserves constant: x × y = k. Buy some of token X and the pool's X reserve shrinks while Y grows, so the next unit of X costs more. Price is simply the ratio of the reserves; every trade moves it. This is why large trades in small pools suffer brutal slippage.</p>
 <h2 id="s2">Who provides the liquidity — and why</h2><p>Liquidity providers (LPs) deposit both tokens in equal value and receive LP tokens representing their share. Traders pay a fee (commonly 0.05–1%) on every swap, distributed pro-rata to LPs. The incentive is fee income; the risk is impermanent loss when prices diverge.</p>
 <h2 id="s3">Evolutions worth knowing</h2><ul><li>Concentrated liquidity (Uniswap v3) — LPs choose price ranges, multiplying capital efficiency</li><li>Stableswap curves — flatter pricing for pegged assets like stablecoins</li><li>Weighted pools (Balancer) — ratios beyond 50/50, e.g. 80/20 to reduce IL</li><li>Just-in-time liquidity &amp; MEV — the dark forest every LP should understand</li></ul>
+      
+      
       <div class="takeaways">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
         <ul><li>AMMs replace order books with pooled reserves and a pricing formula</li><li>x × y = k means every trade moves the price — depth equals low slippage</li><li>LPs earn trading fees but bear impermanent loss</li><li>Concentrated liquidity improved efficiency at the cost of active management</li></ul>
