@@ -1,0 +1,1 @@
+- [Static preview cache refresh](static-preview-cache.md) — Replit Preview may keep older static assets across workflow restarts; cache-bust changed CSS/JS when needed.
