@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impermanent Loss Explained — CryptoStackHub</title>
+<meta name="description" content="The most misunderstood risk in DeFi. With clear math and real examples, learn when providing liquidity beats holding — and when it quietly bleeds you.">
+<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=hero-visibility">
+
+<link rel="canonical" href="https://cryptostackhub.com/articles/impermanent-loss-explained/">
+<meta property="og:title" content="Impermanent Loss Explained — CryptoStackHub">
+<meta property="og:description" content="The most misunderstood risk in DeFi. With clear math and real examples, learn when providing liquidity beats holding — and when it quietly bleeds you.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cryptostackhub.com/articles/impermanent-loss-explained/">
+<meta property="og:site_name" content="CryptoStackHub">
+<meta property="og:image" content="https://cryptostackhub.com/assets/images/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Impermanent Loss Explained — CryptoStackHub">
+<meta name="twitter:description" content="The most misunderstood risk in DeFi. With clear math and real examples, learn when providing liquidity beats holding — and when it quietly bleeds you.">
+<meta name="twitter:image" content="https://cryptostackhub.com/assets/images/og-default.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://cryptostackhub.com/#organization","name":"CryptoStackHub","url":"https://cryptostackhub.com/","logo":{"@type":"ImageObject","url":"https://cryptostackhub.com/assets/images/cryptostackhub-logo.png"},"image":"https://cryptostackhub.com/assets/images/og-default.png"},{"@type":"BreadcrumbList","@id":"https://cryptostackhub.com/articles/impermanent-loss-explained/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cryptostackhub.com/"},{"@type":"ListItem","position":2,"name":"DeFi & Crypto Education","item":"https://cryptostackhub.com/defi/"},{"@type":"ListItem","position":3,"name":"Impermanent Loss Explained","item":"https://cryptostackhub.com/articles/impermanent-loss-explained/"}]},{"@type":"Article","@id":"https://cryptostackhub.com/articles/impermanent-loss-explained/#article","mainEntityOfPage":{"@type":"WebPage","@id":"https://cryptostackhub.com/articles/impermanent-loss-explained/"},"headline":"Impermanent Loss Explained","description":"The most misunderstood risk in DeFi. With clear math and real examples, learn when providing liquidity beats holding — and when it quietly bleeds you.","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@type":"Organization","@id":"https://cryptostackhub.com/authors/cryptostackhub-research/#organization","name":"CryptoStackHub Research Desk","url":"https://cryptostackhub.com/authors/cryptostackhub-research/"},"publisher":{"@id":"https://cryptostackhub.com/#organization"},"image":["https://cryptostackhub.com/assets/images/og-default.png"],"articleSection":"","keywords":""}]}</script>
+</head>
+<body>
+<div class="grain"></div>
+<div class="progress"></div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/"><span class="logo-mark"><img src="/assets/images/cryptostackhub-logo.png" alt="CryptoStackHub logo"></span><span>Crypto<b>StackHub</b></span></a>
+    <button class="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="main-nav" id="site-navigation">
+      <a href="/defi/">DeFi</a>
+      <a href="/developers/">Developers</a>
+      <a href="/tax-compliance/">Tax &amp; Compliance</a>
+      <a href="/gaming-nfts/">Gaming &amp; NFTs</a>
+      <a href="/resources/">Resources</a>
+      <a href="/glossary/">Glossary</a>
+      <a href="/search/" class="nav-cta">Search</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0">
+  <div class="hero-grid"></div>
+  <div class="wrap-narrow article-head">
+    <nav class="crumbs"><a href="/">Home</a><span class="sep">/</span><a href="/defi/">DeFi & Crypto Education</a><span class="sep">/</span><span class="here">Impermanent Loss Explained</span></nav>
+    <span class="chip cat-defi">DeFi & Crypto Education</span>
+    <h1>Impermanent Loss Explained</h1>
+    <div class="article-meta"><span>By <a href="/authors/cryptostackhub-research/">CryptoStackHub Research Desk</a></span><span>·</span><span>2026-08-09</span><span>·</span><span>10 min read</span></div>
+  </div>
+</section>
+<div class="wrap" style="margin-top:10px">
+  <div class="article-featured"><img src="" alt="Decentralized finance network with Ethereum, wallets, users and financial services connected across a global network" loading="eager" decoding="async"></div>
+  <div class="article-layout">
+    <article class="prose">
+      <p class="lede">The most misunderstood risk in DeFi. With clear math and real examples, learn when providing liquidity beats holding — and when it quietly bleeds you.</p>
+      <h2 id="s0">The problem in one sentence</h2><p>When you deposit two tokens into an automated market maker (AMM) pool, the pool constantly rebalances you into whichever token is underperforming — so if prices move apart, you end up worse off than simply holding. That difference is impermanent loss.</p>
+<h2 id="s1">A concrete example</h2><p>You deposit $1,000 of ETH and $1,000 of USDC into a 50/50 pool. ETH doubles. Arbitrage traders buy your cheaper ETH from the pool until prices match the market — leaving you with less ETH and more USDC. Your position is now worth roughly $2,414, while simply holding would be worth $3,000. The ~$586 gap is impermanent loss.</p>
+<p>The loss is called 'impermanent' because if prices return to the entry ratio, it disappears. Realize it by withdrawing at the wrong time and it becomes very permanent.</p>
+<h2 id="s2">When fees and rewards beat the loss</h2><p>Impermanent loss is not automatically bad. Pools that generate strong fee revenue — high volume relative to TVL — can out-earn the loss, especially on correlated pairs (like two stablecoins, where IL is near zero). The question is always: do fees plus incentives exceed IL plus risk?</p>
+<ul><li>Correlated pairs (stables, LST/ETH): minimal IL, modest fees</li><li>Volatile blue-chip pairs (ETH/wBTC): meaningful IL, strong volume</li><li>Exotic pairs: extreme IL risk, often subsidized by inflationary rewards</li></ul>
+<h2 id="s3">How LPs manage it</h2><ul><li>Prefer correlated or pegged pairs for stability</li><li>Use concentrated-liquidity ranges thoughtfully — tighter ranges amplify both fees and IL</li><li>Track your position's hold-vs-LP performance, not just the APY banner</li><li>Size positions so a worst-case divergence is survivable</li></ul>
+      
+      <div class="takeaways">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
+        <ul><li>IL happens because AMMs rebalance you into the underperforming asset</li><li>It grows with price divergence — a 2x move costs ~5.7% vs holding</li><li>Correlated pairs and fee income are the main defenses</li><li>Always compare LP returns against a simple buy-and-hold baseline</li></ul>
+      </div>
+      <div class="disclaimer-box"><b>Educational content only.</b> This article is for informational purposes and is not financial, legal, tax or investment advice. Do your own research and consult qualified professionals before making decisions.</div>
+      <div class="prev-next">
+        <a class="pn-card" href="/articles/yield-farming-vs-staking/"><span>← Previous in DeFi</span><b>Yield Farming vs. Staking</b></a>
+        <a class="pn-card next" href="/articles/best-defi-wallets-compared/"><span>Next in DeFi →</span><b>Best DeFi Wallets Compared</b></a>
+      </div>
+    </article>
+    <aside class="toc">
+      <div class="toc-box"><h4>On this page</h4><a href="#s0">The problem in one sentence</a><a href="#s1">A concrete example</a><a href="#s2">When fees and rewards beat the loss</a><a href="#s3">How LPs manage it</a></div>
+      <div class="toc-share"><h4>Share</h4>
+        <div class="share-row">
+          <button data-share="copy" title="Copy link">&#128279;</button>
+          <button data-share="x" title="Share on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.5l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.8L17.8 20z"/></svg></button>
+          <button data-share="native" title="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<section><div class="wrap">
+  <div class="section-head"><h2>Keep reading</h2><a class="section-link" href="/defi/">All DeFi guides →</a></div>
+  <div class="card-grid"><a class="post-card reveal" href="/articles/what-is-defi/">
+  <div class="post-visual"><img class="card-feature-image" src="/assets/images/what-is-defi-featured.png" alt="What Is DeFi? A Beginner's Guide to Decentralized Finance featured illustration" loading="lazy" decoding="async"></div>
+  <div class="post-body">
+    <span class="chip cat-defi">DeFi & Crypto Education</span>
+    <h3>What Is DeFi? A Beginner's Guide to Decentralized Finance</h3>
+    <p>DeFi (decentralized finance) lets you lend, borrow, and trade crypto without banks. Learn how it works, the real risks, and whether it's legal.</p>
+    <div class="post-meta"><span>10 min read</span><span>·</span><span>2026-09-08</span></div>
+  </div>
+</a><a class="post-card reveal" href="/articles/how-staking-works/">
+  <div class="post-visual"><div class="pv-bg" style="--tint2:rgba(45,212,191,.38);--tint3:rgba(96,165,250,.28)"></div><div class="pv-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M12 22V12"/><path d="m3 7 9 5 9-5"/></svg></div></div>
+  <div class="post-body">
+    <span class="chip cat-defi">DeFi & Crypto Education</span>
+    <h3>How Staking Works</h3>
+    <p>Staking secures proof-of-stake networks and pays you for it. Learn how validators, delegators, lockups and slashing actually work before you commit funds.</p>
+    <div class="post-meta"><span>8 min read</span><span>·</span><span>2026-08-05</span></div>
+  </div>
+</a><a class="post-card reveal" href="/articles/yield-farming-vs-staking/">
+  <div class="post-visual"><div class="pv-bg" style="--tint2:rgba(45,212,191,.38);--tint3:rgba(96,165,250,.28)"></div><div class="pv-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M12 22V12"/><path d="m3 7 9 5 9-5"/></svg></div></div>
+  <div class="post-body">
+    <span class="chip cat-defi">DeFi & Crypto Education</span>
+    <h3>Yield Farming vs. Staking</h3>
+    <p>Both promise passive income on your crypto, but they work completely differently. A clear breakdown of mechanics, risk profiles and when each makes sense.</p>
+    <div class="post-meta"><span>7 min read</span><span>·</span><span>2026-08-07</span></div>
+  </div>
+</a></div>
+</div></section>
+<section><div class="wrap"><div class="newsletter reveal">
+  <span class="eyebrow">Weekly Signal</span>
+  <h2>One email. <span class="grad-text">Zero noise.</span></h2>
+  <p>The week's most important developments across DeFi, blockchain engineering, crypto tax and Web3 gaming — distilled by humans who actually read the source material.</p>
+  <form class="news-form"><input type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Subscribe</button></form>
+  <p class="news-note">Free forever. Unsubscribe anytime. We never share your email.</p>
+</div></div></section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/"><span class="logo-mark"><img src="/assets/images/cryptostackhub-logo.png" alt="CryptoStackHub logo"></span><span>Crypto<b>StackHub</b></span></a>
+        <p>Independent, in-depth education on DeFi, blockchain engineering, crypto tax and Web3 gaming. No hype, no shilling — just signal.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <a href="/defi/">DeFi &amp; Crypto Education</a>
+        <a href="/developers/">Blockchain Development</a>
+        <a href="/tax-compliance/">Crypto Tax &amp; Compliance</a>
+        <a href="/gaming-nfts/">Web3 Gaming &amp; NFTs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/write-for-us/">Write for Us</a>
+        <a href="/advertise/">Advertise</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/resources/">Tools &amp; Resources</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/search/">Search</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoStackHub. Educational content only — not financial, legal or tax advice.</span>
+      <span class="legal-links"><a href="/privacy-policy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclaimer/">Disclaimer</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

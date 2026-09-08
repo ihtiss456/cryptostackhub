@@ -1,0 +1,322 @@
+[
+ {
+  "title": "What Is DeFi? A Beginner's Guide to Decentralized Finance",
+  "description": "DeFi (decentralized finance) lets you lend, borrow, and trade crypto without banks. Learn how it works, the real risks, and whether it's legal.",
+  "url": "/articles/what-is-defi/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "what is defi decentralized finance basics"
+ },
+ {
+  "title": "How Staking Works",
+  "description": "Staking secures proof-of-stake networks and pays you for it. Learn how validators, delegators, lockups and slashing actually work before you commit funds.",
+  "url": "/articles/how-staking-works/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "staking proof of stake validators rewards"
+ },
+ {
+  "title": "Yield Farming vs. Staking",
+  "description": "Both promise passive income on your crypto, but they work completely differently. A clear breakdown of mechanics, risk profiles and when each makes sense.",
+  "url": "/articles/yield-farming-vs-staking/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "yield farming staking comparison passive income"
+ },
+ {
+  "title": "Impermanent Loss Explained",
+  "description": "The most misunderstood risk in DeFi. With clear math and real examples, learn when providing liquidity beats holding \u2014 and when it quietly bleeds you.",
+  "url": "/articles/impermanent-loss-explained/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "impermanent loss liquidity pool amm math"
+ },
+ {
+  "title": "Best DeFi Wallets Compared",
+  "description": "Hot wallets, hardware wallets, smart-contract wallets \u2014 a practical comparison of the leading options for DeFi users, and how to choose your setup.",
+  "url": "/articles/best-defi-wallets-compared/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "defi wallets comparison metamask ledger hardware wallet"
+ },
+ {
+  "title": "How to Read a DeFi Protocol's Smart Contract Audit",
+  "description": "An audit badge means nothing if you can't read the report. Learn what auditors actually check, what severity ratings mean, and the red flags to look for.",
+  "url": "/articles/how-to-read-defi-audit/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "smart contract audit security due diligence"
+ },
+ {
+  "title": "Centralized vs. Decentralized Exchanges",
+  "description": "Binance or Uniswap? Custody, fees, liquidity, privacy and risk \u2014 an honest head-to-head comparison to help you choose where to trade.",
+  "url": "/articles/cex-vs-dex-comparison/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "cex dex exchange comparison uniswap binance custody"
+ },
+ {
+  "title": "Common DeFi Scams (and How to Avoid Them)",
+  "description": "Rug pulls, honeypots, phishing, approval exploits \u2014 a field guide to the scams that drain wallets, with the exact red flags to watch for.",
+  "url": "/articles/common-defi-scams/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "defi scams rug pull phishing honeypot security"
+ },
+ {
+  "title": "Liquidity Pools: First Principles",
+  "description": "How can you trade without an order book? The math of constant-product AMMs, liquidity providers and price discovery \u2014 built up from zero.",
+  "url": "/articles/liquidity-pools-first-principles/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "liquidity pools amm constant product uniswap how it works"
+ },
+ {
+  "title": "Stablecoins Explained",
+  "description": "Fiat-backed, crypto-backed, algorithmic \u2014 the three designs for price-stable crypto, how each can fail, and how to evaluate which to trust.",
+  "url": "/articles/stablecoins-explained/",
+  "category": "DeFi & Crypto Education",
+  "catClass": "cat-defi",
+  "keywords": "stablecoins usdc usdt dai algorithmic fiat backed"
+ },
+ {
+  "title": "Solidity for Beginners",
+  "description": "Your first steps in Ethereum's smart contract language: types, functions, state, and a complete walkthrough of a real contract you can deploy today.",
+  "url": "/articles/solidity-for-beginners/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "solidity tutorial beginners smart contract ethereum"
+ },
+ {
+  "title": "EVM vs. Non-EVM Chains",
+  "description": "Ethereum's virtual machine became an industry standard \u2014 but Solana, Move and Cosmos chose different paths. What the choice means for developers.",
+  "url": "/articles/evm-vs-non-evm-chains/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "evm non-evm solana move cosmos blockchain architecture"
+ },
+ {
+  "title": "Local Blockchain Dev Environment",
+  "description": "Set up a professional smart contract development environment from scratch: Foundry, local nodes, forking mainnet, and the workflow pros use.",
+  "url": "/articles/local-blockchain-dev-environment/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "foundry hardhat anvil local development environment setup"
+ },
+ {
+  "title": "Gas Optimization Techniques",
+  "description": "Cut your contract's gas costs by 30\u201370% with storage packing, calldata tricks, custom errors and assembly \u2014 with the trade-offs honestly labeled.",
+  "url": "/articles/gas-optimization-techniques/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "gas optimization solidity storage packing evm efficiency"
+ },
+ {
+  "title": "Building and Deploying Your First DApp",
+  "description": "From empty folder to live decentralized application: contract, tests, frontend wallet connection, and a mainnet deployment checklist.",
+  "url": "/articles/building-your-first-dapp/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "dapp tutorial deploy frontend web3 wagmi full stack"
+ },
+ {
+  "title": "Smart Contract Security: Top Vulnerabilities",
+  "description": "The attack patterns behind crypto's biggest hacks \u2014 reentrancy, oracle manipulation, access control failures \u2014 and the defenses that actually work.",
+  "url": "/articles/smart-contract-security-vulnerabilities/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "smart contract security vulnerabilities reentrancy hacks audit"
+ },
+ {
+  "title": "Layer 2 Scaling Explained",
+  "description": "Optimistic rollups, ZK rollups, validiums \u2014 how Layer 2s inherit Ethereum's security while cutting fees 100x, and what it means for your architecture.",
+  "url": "/articles/layer-2-scaling-explained/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "layer 2 rollup optimistic zk arbitrum optimism scaling"
+ },
+ {
+  "title": "Testing Smart Contracts",
+  "description": "Unit tests are not enough. Fuzzing, invariant testing, fork testing and formal methods \u2014 the full testing pyramid for contracts that hold real money.",
+  "url": "/articles/testing-smart-contracts/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "testing smart contracts fuzzing invariant foundry forge"
+ },
+ {
+  "title": "Storage Layouts",
+  "description": "How the EVM actually stores your variables: slots, packing, mappings, and why understanding storage layout is essential for upgrades and gas optimization.",
+  "url": "/articles/storage-layouts/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "evm storage layout slots packing upgradeable contracts"
+ },
+ {
+  "title": "RPC Reliability",
+  "description": "Your dApp is only as reliable as its RPC endpoint. Failover strategies, provider trade-offs, rate limits and monitoring for production-grade infrastructure.",
+  "url": "/articles/rpc-reliability/",
+  "category": "Blockchain Development",
+  "catClass": "cat-dev",
+  "keywords": "rpc node provider reliability infura alchemy infrastructure"
+ },
+ {
+  "title": "Crypto Taxes: Country-by-Country Overview",
+  "description": "How major jurisdictions tax crypto in 2026: the US, UK, EU, and beyond \u2014 taxable events, rates, and reporting regimes compared in one place.",
+  "url": "/articles/crypto-taxes-country-by-country/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "crypto taxes by country international comparison rates"
+ },
+ {
+  "title": "How to Calculate Capital Gains on Crypto Trades",
+  "description": "Cost basis, proceeds, holding periods \u2014 a worked-example guide to calculating crypto capital gains correctly, including the mistakes that trigger audits.",
+  "url": "/articles/how-to-calculate-capital-gains/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "capital gains calculation cost basis crypto tax"
+ },
+ {
+  "title": "Crypto Tax Software Compared",
+  "description": "The leading crypto tax platforms head-to-head: exchange coverage, DeFi support, accuracy and pricing \u2014 plus when software isn't enough.",
+  "url": "/articles/crypto-tax-software-compared/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "crypto tax software comparison koinly coinledger review"
+ },
+ {
+  "title": "DeFi Taxes: Staking, Yield, and Airdrops",
+  "description": "When is staking income taxable? What about LP rewards and airdrops? The current treatment of DeFi's trickiest income types, explained plainly.",
+  "url": "/articles/defi-taxes-staking-yield-airdrops/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "defi taxes staking rewards airdrop income taxable"
+ },
+ {
+  "title": "NFT Taxation Guide",
+  "description": "Buying, selling, minting, and earning royalties \u2014 how NFTs are taxed for collectors, traders and creators, with the gray areas flagged honestly.",
+  "url": "/articles/nft-taxation-guide/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "nft taxes royalties mint collectibles capital gains"
+ },
+ {
+  "title": "Crypto Tax-Loss Harvesting",
+  "description": "Turn your losing positions into tax savings: how loss harvesting works for crypto, the wash-sale question, and a step-by-step year-end playbook.",
+  "url": "/articles/crypto-tax-loss-harvesting/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "tax loss harvesting wash sale crypto losses offset"
+ },
+ {
+  "title": "How Exchanges Report Your Activity to Tax Authorities",
+  "description": "Think your exchange activity is private? Here's exactly what platforms report, to whom, and how the new global reporting frameworks close the gaps.",
+  "url": "/articles/how-exchanges-report-to-tax-authorities/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "exchange reporting tax authorities carf dac8 1099"
+ },
+ {
+  "title": "Crypto Compliance for Startups",
+  "description": "Building a crypto company? The compliance foundations you need before launch: licensing, AML/KYC, tax infrastructure and the mistakes that kill startups.",
+  "url": "/articles/crypto-compliance-for-startups/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "crypto startup compliance aml kyc licensing regulation"
+ },
+ {
+  "title": "Cost Basis Methods",
+  "description": "FIFO, LIFO, HIFO, specific identification \u2014 how your choice of accounting method changes your crypto tax bill, with worked numbers.",
+  "url": "/articles/cost-basis-methods/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "cost basis fifo lifo hifo specific identification accounting"
+ },
+ {
+  "title": "Wallet Recordkeeping",
+  "description": "The recordkeeping system that makes crypto taxes painless: what to track, how to structure it, and the habits that survive an audit.",
+  "url": "/articles/wallet-recordkeeping/",
+  "category": "Crypto Tax & Compliance",
+  "catClass": "cat-tax",
+  "keywords": "wallet recordkeeping transaction records audit trail"
+ },
+ {
+  "title": "What Is Web3 Gaming?",
+  "description": "Beyond the buzzwords: what blockchain actually adds to games, where the industry is after the hype cycle, and what matters for players and builders.",
+  "url": "/articles/what-is-web3-gaming/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "web3 gaming blockchain games explained ownership"
+ },
+ {
+  "title": "Play-to-Earn Explained",
+  "description": "The rise and crash of play-to-earn, the economics that doomed most of it, and the sustainable models replacing it.",
+  "url": "/articles/play-to-earn-explained/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "play to earn p2e game economy axie tokenomics"
+ },
+ {
+  "title": "NFT Utility Beyond Art",
+  "description": "NFTs as access keys, identity, licenses and game assets \u2014 the use cases that survive the art-market cycle.",
+  "url": "/articles/nft-utility-beyond-art/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "nft utility access membership identity use cases"
+ },
+ {
+  "title": "How Game Studios Are Integrating Blockchain",
+  "description": "From AAA experiments to indie innovation: the actual integration patterns studios use, why most assets stay off-chain, and the 'web2.5' playbook.",
+  "url": "/articles/game-studios-blockchain-integration/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "game studios blockchain integration web2.5 development"
+ },
+ {
+  "title": "Best Wallets for Web3 Gaming",
+  "description": "Session keys, embedded wallets, hardware options \u2014 choosing the right wallet setup for blockchain gaming, whether you're a player or a whale collector.",
+  "url": "/articles/best-wallets-for-web3-gaming/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "gaming wallets session keys embedded wallet comparison"
+ },
+ {
+  "title": "The Economics of In-Game NFT Marketplaces",
+  "description": "Royalties, fees, price discovery and liquidity: how player-owned marketplaces actually make money, and what healthy economy design looks like.",
+  "url": "/articles/economics-of-ingame-nft-marketplaces/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "nft marketplace economics royalties game economy fees"
+ },
+ {
+  "title": "Web3 Gaming Scams: Rug Pulls",
+  "description": "Fake mints, malicious signatures, vaporware studios \u2014 the scam patterns targeting gamers, and the due diligence that protects you.",
+  "url": "/articles/web3-gaming-scams-rug-pulls/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "web3 gaming scams rug pull fake mint phishing"
+ },
+ {
+  "title": "Interoperability in Web3 Games",
+  "description": "The dream of items that move between games: what's technically possible today, why it barely happens, and the designs inching toward it.",
+  "url": "/articles/interoperability-in-web3-games/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "interoperability cross game assets metaverse standards"
+ },
+ {
+  "title": "NFT Utility Beyond the Hype",
+  "description": "A clear-eyed audit of which NFT utilities retained value through the bear market \u2014 and which were always marketing.",
+  "url": "/articles/nft-utility-beyond-hype/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "nft utility value bear market audit real use"
+ },
+ {
+  "title": "Player-Owned Assets",
+  "description": "What 'owning' a game asset legally and technically means, the gap between marketing and reality, and how to evaluate ownership claims.",
+  "url": "/articles/player-owned-assets/",
+  "category": "Web3 Gaming & NFTs",
+  "catClass": "cat-gaming",
+  "keywords": "player owned assets digital ownership nfts rights"
+ }
+]

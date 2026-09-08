@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building and Deploying Your First DApp — CryptoStackHub</title>
+<meta name="description" content="From empty folder to live decentralized application: contract, tests, frontend wallet connection, and a mainnet deployment checklist.">
+<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=hero-visibility">
+
+<link rel="canonical" href="https://cryptostackhub.com/articles/building-your-first-dapp/">
+<meta property="og:title" content="Building and Deploying Your First DApp — CryptoStackHub">
+<meta property="og:description" content="From empty folder to live decentralized application: contract, tests, frontend wallet connection, and a mainnet deployment checklist.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cryptostackhub.com/articles/building-your-first-dapp/">
+<meta property="og:site_name" content="CryptoStackHub">
+<meta property="og:image" content="https://cryptostackhub.com/assets/images/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Building and Deploying Your First DApp — CryptoStackHub">
+<meta name="twitter:description" content="From empty folder to live decentralized application: contract, tests, frontend wallet connection, and a mainnet deployment checklist.">
+<meta name="twitter:image" content="https://cryptostackhub.com/assets/images/og-default.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://cryptostackhub.com/#organization","name":"CryptoStackHub","url":"https://cryptostackhub.com/","logo":{"@type":"ImageObject","url":"https://cryptostackhub.com/assets/images/cryptostackhub-logo.png"},"image":"https://cryptostackhub.com/assets/images/og-default.png"},{"@type":"BreadcrumbList","@id":"https://cryptostackhub.com/articles/building-your-first-dapp/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cryptostackhub.com/"},{"@type":"ListItem","position":2,"name":"Blockchain Development","item":"https://cryptostackhub.com/developers/"},{"@type":"ListItem","position":3,"name":"Building and Deploying Your First DApp","item":"https://cryptostackhub.com/articles/building-your-first-dapp/"}]},{"@type":"Article","@id":"https://cryptostackhub.com/articles/building-your-first-dapp/#article","mainEntityOfPage":{"@type":"WebPage","@id":"https://cryptostackhub.com/articles/building-your-first-dapp/"},"headline":"Building and Deploying Your First DApp","description":"From empty folder to live decentralized application: contract, tests, frontend wallet connection, and a mainnet deployment checklist.","datePublished":"2026-08-04","dateModified":"2026-08-04","author":{"@type":"Organization","@id":"https://cryptostackhub.com/authors/cryptostackhub-engineering/#organization","name":"CryptoStackHub Engineering Desk","url":"https://cryptostackhub.com/authors/cryptostackhub-engineering/"},"publisher":{"@id":"https://cryptostackhub.com/#organization"},"image":["https://cryptostackhub.com/assets/images/og-default.png"],"articleSection":"","keywords":""}]}</script>
+</head>
+<body>
+<div class="grain"></div>
+<div class="progress"></div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/"><span class="logo-mark"><img src="/assets/images/cryptostackhub-logo.png" alt="CryptoStackHub logo"></span><span>Crypto<b>StackHub</b></span></a>
+    <button class="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="main-nav" id="site-navigation">
+      <a href="/defi/">DeFi</a>
+      <a href="/developers/">Developers</a>
+      <a href="/tax-compliance/">Tax &amp; Compliance</a>
+      <a href="/gaming-nfts/">Gaming &amp; NFTs</a>
+      <a href="/resources/">Resources</a>
+      <a href="/glossary/">Glossary</a>
+      <a href="/search/" class="nav-cta">Search</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0">
+  <div class="hero-grid"></div>
+  <div class="wrap-narrow article-head">
+    <nav class="crumbs"><a href="/">Home</a><span class="sep">/</span><a href="/developers/">Blockchain Development</a><span class="sep">/</span><span class="here">Building and Deploying Your First DApp</span></nav>
+    <span class="chip cat-dev">Blockchain Development</span>
+    <h1>Building and Deploying Your First DApp</h1>
+    <div class="article-meta"><span>By <a href="/authors/cryptostackhub-engineering/">CryptoStackHub Engineering Desk</a></span><span>·</span><span>2026-08-04</span><span>·</span><span>13 min read</span></div>
+  </div>
+</section>
+<div class="wrap" style="margin-top:10px">
+  <div class="article-featured"><img src="" alt="Decentralized finance network with Ethereum, wallets, users and financial services connected across a global network" loading="eager" decoding="async"></div>
+  <div class="article-layout">
+    <article class="prose">
+      <p class="lede">From empty folder to live decentralized application: contract, tests, frontend wallet connection, and a mainnet deployment checklist.</p>
+      <h2 id="s0">Anatomy of a dApp</h2><p>A decentralized application has three parts: smart contracts (the backend, living on-chain), a frontend (a normal web app), and a wallet connection layer that lets users sign transactions. The frontend never holds user funds — the wallet does — which is the whole point.</p>
+<h2 id="s1">Step 1 — the contract</h2><p>Start minimal. A contract with one state variable and two functions teaches you 80% of the workflow. Write it in Solidity, write unit tests covering the happy path and the failure modes, and deploy to a local fork first.</p>
+<pre><code>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+contract Vault {
+    mapping(address => uint256) public balances;
+
+    function deposit() external payable {
+        balances[msg.sender] += msg.value;
+    }
+
+    function withdraw(uint256 amount) external {
+        require(balances[msg.sender] >= amount, "insufficient");
+        balances[msg.sender] -= amount;   // effects before interaction
+        (bool ok, ) = msg.sender.call{value: amount}("");
+        require(ok, "transfer failed");
+    }
+}</code></pre>
+<h2 id="s2">Step 2 — the frontend</h2><p>Modern stack: a React app with wagmi + viem for chain interactions and a wallet connector for the connect button. The flow is always the same — connect wallet, read contract state with a call (free), write state with a transaction (costs gas, needs a signature), then listen for the receipt and update the UI.</p>
+<h2 id="s3">Step 3 — deployment checklist</h2><ul><li>Full test coverage on core logic — 90%+ on anything holding funds</li><li>Static analysis (Slither) and, for anything serious, an external audit</li><li>Deploy to testnet, then do a real user walkthrough with fresh eyes</li><li>Verify the contract source on the block explorer</li><li>Mainnet deploy from a dedicated deployer wallet, with keys stored properly</li><li>Monitor: set up alerts for unusual contract events from day one</li></ul>
+      
+      <div class="takeaways">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Key takeaways</h3>
+        <ul><li>dApp = contracts + frontend + wallet signing; the frontend never custodies</li><li>wagmi/viem make the web3 frontend feel like normal React</li><li>Testnet walkthroughs catch what unit tests miss</li><li>Deployment is the beginning — monitoring and key security are forever</li></ul>
+      </div>
+      <div class="disclaimer-box"><b>Educational content only.</b> This article is for informational purposes and is not financial, legal, tax or investment advice. Do your own research and consult qualified professionals before making decisions.</div>
+      <div class="prev-next">
+        <a class="pn-card" href="/articles/gas-optimization-techniques/"><span>← Previous in Developers</span><b>Gas Optimization Techniques</b></a>
+        <a class="pn-card next" href="/articles/smart-contract-security-vulnerabilities/"><span>Next in Developers →</span><b>Smart Contract Security: Top Vulnerabilities</b></a>
+      </div>
+    </article>
+    <aside class="toc">
+      <div class="toc-box"><h4>On this page</h4><a href="#s0">Anatomy of a dApp</a><a href="#s1">Step 1 — the contract</a><a href="#s2">Step 2 — the frontend</a><a href="#s3">Step 3 — deployment checklist</a></div>
+      <div class="toc-share"><h4>Share</h4>
+        <div class="share-row">
+          <button data-share="copy" title="Copy link">&#128279;</button>
+          <button data-share="x" title="Share on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.5l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.8L17.8 20z"/></svg></button>
+          <button data-share="native" title="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<section><div class="wrap">
+  <div class="section-head"><h2>Keep reading</h2><a class="section-link" href="/developers/">All Developers guides →</a></div>
+  <div class="card-grid"><a class="post-card reveal" href="/articles/solidity-for-beginners/">
+  <div class="post-visual"><div class="pv-bg" style="--tint2:rgba(167,139,250,.38);--tint3:rgba(94,234,212,.26)"></div><div class="pv-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6"/><path d="m16 6 6 6-6 6"/><path d="m13 4-2 16"/></svg></div></div>
+  <div class="post-body">
+    <span class="chip cat-dev">Blockchain Development</span>
+    <h3>Solidity for Beginners</h3>
+    <p>Your first steps in Ethereum's smart contract language: types, functions, state, and a complete walkthrough of a real contract you can deploy today.</p>
+    <div class="post-meta"><span>12 min read</span><span>·</span><span>2026-08-23</span></div>
+  </div>
+</a><a class="post-card reveal" href="/articles/evm-vs-non-evm-chains/">
+  <div class="post-visual"><div class="pv-bg" style="--tint2:rgba(167,139,250,.38);--tint3:rgba(94,234,212,.26)"></div><div class="pv-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6"/><path d="m16 6 6 6-6 6"/><path d="m13 4-2 16"/></svg></div></div>
+  <div class="post-body">
+    <span class="chip cat-dev">Blockchain Development</span>
+    <h3>EVM vs. Non-EVM Chains</h3>
+    <p>Ethereum's virtual machine became an industry standard — but Solana, Move and Cosmos chose different paths. What the choice means for developers.</p>
+    <div class="post-meta"><span>9 min read</span><span>·</span><span>2026-08-25</span></div>
+  </div>
+</a><a class="post-card reveal" href="/articles/local-blockchain-dev-environment/">
+  <div class="post-visual"><div class="pv-bg" style="--tint2:rgba(167,139,250,.38);--tint3:rgba(94,234,212,.26)"></div><div class="pv-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6"/><path d="m16 6 6 6-6 6"/><path d="m13 4-2 16"/></svg></div></div>
+  <div class="post-body">
+    <span class="chip cat-dev">Blockchain Development</span>
+    <h3>Local Blockchain Dev Environment</h3>
+    <p>Set up a professional smart contract development environment from scratch: Foundry, local nodes, forking mainnet, and the workflow pros use.</p>
+    <div class="post-meta"><span>10 min read</span><span>·</span><span>2026-08-27</span></div>
+  </div>
+</a></div>
+</div></section>
+<section><div class="wrap"><div class="newsletter reveal">
+  <span class="eyebrow">Weekly Signal</span>
+  <h2>One email. <span class="grad-text">Zero noise.</span></h2>
+  <p>The week's most important developments across DeFi, blockchain engineering, crypto tax and Web3 gaming — distilled by humans who actually read the source material.</p>
+  <form class="news-form"><input type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Subscribe</button></form>
+  <p class="news-note">Free forever. Unsubscribe anytime. We never share your email.</p>
+</div></div></section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/"><span class="logo-mark"><img src="/assets/images/cryptostackhub-logo.png" alt="CryptoStackHub logo"></span><span>Crypto<b>StackHub</b></span></a>
+        <p>Independent, in-depth education on DeFi, blockchain engineering, crypto tax and Web3 gaming. No hype, no shilling — just signal.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <a href="/defi/">DeFi &amp; Crypto Education</a>
+        <a href="/developers/">Blockchain Development</a>
+        <a href="/tax-compliance/">Crypto Tax &amp; Compliance</a>
+        <a href="/gaming-nfts/">Web3 Gaming &amp; NFTs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/write-for-us/">Write for Us</a>
+        <a href="/advertise/">Advertise</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/resources/">Tools &amp; Resources</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/search/">Search</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CryptoStackHub. Educational content only — not financial, legal or tax advice.</span>
+      <span class="legal-links"><a href="/privacy-policy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclaimer/">Disclaimer</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
