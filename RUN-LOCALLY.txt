@@ -1,0 +1,10 @@
+HOW TO RUN LOCALLY
+==================
+1. Extract this ZIP.
+2. Open PowerShell INSIDE the extracted folder (the folder containing index.html and assets).
+3. Run:
+   python -m http.server 8000
+4. Open:
+   http://localhost:8000/
+
+Important: Do not run the server from a parent folder.

@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ShxC9O3uw2KrQ1HBs5aMy"
+uri = "file://chainledger-website-source.zip"
+type = "unspecified"
+title = "CryptoStackHub website source"
+description = "Complete CryptoStackHub website source archive with all HTML pages, CSS, JavaScript, assets, generator files, Replit configuration, documentation, and the uploaded hero image. Workspace-only metadata and caches are excluded."
+logical_id = "ac6b161e-1e82-42fd-982d-b4dd0c9b58f8"
+content_hash = "sha256:ad09ddaa66aee9747be90e3e7dd8ab41e8808a8e7b637db16244d81382738183"
+size = 1695645
+mtime_ms = 1788781316758
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:84c2ec12-bb84-4401-9162-40142670ac0b/ac6b161e-1e82-42fd-982d-b4dd0c9b58f8/0c9e10ba-b845-4031-9643-a5424ca95922"
+storage_version_token = "1788781325861337"
+content_type = "application/octet-stream"
