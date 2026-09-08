@@ -1,0 +1,82 @@
+<svg width="1600" height="850" viewBox="0 0 1600 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="base" x1="120" y1="40" x2="1480" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111A2B"/>
+      <stop offset=".48" stop-color="#0C1322"/>
+      <stop offset="1" stop-color="#151329"/>
+    </linearGradient>
+    <radialGradient id="teal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(170 150) rotate(44) scale(420 320)">
+      <stop stop-color="#2DD4BF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(620 700) rotate(-14) scale(410 300)">
+      <stop stop-color="#A78BFA" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1050 150) rotate(138) scale(430 320)">
+      <stop stop-color="#F5B942" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#F5B942" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pink" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1450 690) rotate(-146) scale(440 330)">
+      <stop stop-color="#F472B6" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#F472B6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="network" x1="120" y1="140" x2="1460" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4" stop-opacity=".58"/>
+      <stop offset=".34" stop-color="#A78BFA" stop-opacity=".42"/>
+      <stop offset=".68" stop-color="#F5B942" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#F472B6" stop-opacity=".56"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" stroke="#D6E6FF" stroke-opacity=".07"/>
+    </pattern>
+    <filter id="blur" x="-300" y="-300" width="2200" height="1450" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="52"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="850" fill="url(#base)"/>
+  <rect width="1600" height="850" fill="url(#teal)"/>
+  <rect width="1600" height="850" fill="url(#violet)"/>
+  <rect width="1600" height="850" fill="url(#gold)"/>
+  <rect width="1600" height="850" fill="url(#pink)"/>
+  <rect width="1600" height="850" fill="url(#grid)" opacity=".56"/>
+  <ellipse cx="800" cy="430" rx="580" ry="250" fill="#0A1020" fill-opacity=".7" filter="url(#blur)"/>
+
+  <g stroke="url(#network)" stroke-width="2" opacity=".68">
+    <path d="M50 210L242 108L430 228L616 116L806 238L1006 100L1190 222L1548 118"/>
+    <path d="M30 666L224 748L422 620L616 760L820 630L1016 748L1206 614L1570 710"/>
+    <path d="M242 108L224 748M430 228L422 620M616 116L616 760M806 238L820 630M1006 100L1016 748M1190 222L1206 614"/>
+    <path d="M50 210L422 620M616 116L1016 748M806 238L1206 614M1548 118L1016 748"/>
+  </g>
+
+  <g fill="#08121D" stroke="#D4E1F8" stroke-opacity=".64" stroke-width="2">
+    <circle cx="50" cy="210" r="11"/>
+    <circle cx="242" cy="108" r="8"/>
+    <circle cx="430" cy="228" r="11"/>
+    <circle cx="616" cy="116" r="10"/>
+    <circle cx="806" cy="238" r="8"/>
+    <circle cx="1006" cy="100" r="11"/>
+    <circle cx="1190" cy="222" r="9"/>
+    <circle cx="1548" cy="118" r="11"/>
+    <circle cx="30" cy="666" r="8"/>
+    <circle cx="224" cy="748" r="11"/>
+    <circle cx="422" cy="620" r="8"/>
+    <circle cx="616" cy="760" r="11"/>
+    <circle cx="820" cy="630" r="9"/>
+    <circle cx="1016" cy="748" r="11"/>
+    <circle cx="1206" cy="614" r="9"/>
+    <circle cx="1570" cy="710" r="11"/>
+  </g>
+
+  <g opacity=".68">
+    <circle cx="50" cy="210" r="3" fill="#5EEAD4"/>
+    <circle cx="616" cy="116" r="3" fill="#A78BFA"/>
+    <circle cx="1006" cy="100" r="3" fill="#F5B942"/>
+    <circle cx="1548" cy="118" r="3" fill="#F472B6"/>
+    <circle cx="224" cy="748" r="3" fill="#A78BFA"/>
+    <circle cx="616" cy="760" r="3" fill="#60A5FA"/>
+    <circle cx="1016" cy="748" r="3" fill="#F5B942"/>
+    <circle cx="1570" cy="710" r="3" fill="#F472B6"/>
+  </g>
+</svg>
