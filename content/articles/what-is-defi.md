@@ -9,7 +9,7 @@ dateModified: 2026-09-08
 metaTitle: "What Is DeFi? A Beginner's Guide to Decentralized Finance"
 metaDescription: "DeFi (decentralized finance) lets you lend, borrow, and trade crypto without banks. Learn how it works, the real risks, and whether it's legal."
 focusKeyword: "what is defi"
-featuredImage: /assets/images/what-is-defi-featured.png
+featuredImage: /assets/images/articles/what-is-defi/featured.png
 ---
 
 # What Is DeFi? A Beginner's Guide to Decentralized Finance
@@ -59,7 +59,7 @@ In traditional finance, a bank acts as the trusted middleman for nearly everythi
 
 Because the code lives on a public blockchain, anyone can verify exactly how a protocol works. There's no "trust us" — there's "read the contract."
 
-![Traditional finance compared with DeFi, showing banks and intermediaries versus direct smart-contract transactions](/assets/images/what-is-defi-traditional-vs-defi.png)
+![Traditional finance compared with DeFi, showing banks and intermediaries versus direct smart-contract transactions](/assets/images/articles/what-is-defi/image-1.png)
 
 
 ### The Core Building Blocks
@@ -84,7 +84,7 @@ Platforms like **Aave** and **Compound** let you deposit crypto and earn interes
 
 **Decentralized exchanges (DEXs)** like Uniswap and PancakeSwap let you swap one token for another directly from your own wallet. The market is open 24 hours a day, 7 days a week, 365 days a year. You never hand your funds over to an exchange platform — you stay in control from start to finish.
 
-![CEX versus DEX comparison showing custodial exchange funds on one side and wallet-based smart-contract trading on the other](/assets/images/what-is-defi-cex-vs-dex.png)
+![CEX versus DEX comparison showing custodial exchange funds on one side and wallet-based smart-contract trading on the other](/assets/images/articles/what-is-defi/image-2.png)
 
 ### Yield Generation
 
@@ -131,7 +131,7 @@ DeFi enables near-instant transfers to anywhere in the world for minimal fees �
 
 **Global by default** — No borders, no currency conversion desks, no regional banking restrictions.
 
-![Global DeFi network illustration showing wallets, lending pools, stablecoins, trading and borderless payments connected around the world](/assets/images/what-is-defi-global-network.png)
+![Global DeFi network illustration showing wallets, lending pools, stablecoins, trading and borderless payments connected around the world](/assets/images/articles/what-is-defi/image-3.png)
 
 
 ## Risks of DeFi
@@ -166,7 +166,7 @@ However, several layers of legal complexity apply:
 
 The short version: DeFi is legal to use in the US, but tax reporting is required and the regulatory landscape is shifting. Consult a licensed tax professional or attorney for guidance specific to your situation.
 
-![Ethereum and a government building with legal scales illustrating the evolving regulatory landscape around DeFi](/assets/images/what-is-defi-regulation.png)
+![Ethereum and a government building with legal scales illustrating the evolving regulatory landscape around DeFi](/assets/images/articles/what-is-defi/image-4.png)
 
 ## How to Get Started with DeFi
 

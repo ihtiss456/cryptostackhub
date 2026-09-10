@@ -113,6 +113,8 @@ section{padding:72px 0}
 .hero{
   position:relative;padding:126px 0 104px;overflow:hidden;isolation:isolate;
   background:
+     linear-gradient(rgba(7,10,18,.28),rgba(7,10,18,.28)),
+     url("/assets/images/hero-background.svg") center/cover no-repeat,
     radial-gradient(ellipse 90% 70% at 50% 0%,rgba(45,212,191,.10) 0%,transparent 55%),
     radial-gradient(ellipse 70% 60% at 85% 20%,rgba(139,92,246,.10) 0%,transparent 55%),
     linear-gradient(180deg,rgba(7,10,18,.55) 0%,rgba(7,10,18,.66) 58%,rgba(7,10,18,.86) 100%),

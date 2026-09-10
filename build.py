@@ -789,7 +789,7 @@ def header(active=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=hero-visibility">
+<link rel="stylesheet" href="/assets/css/style.css?v=hero-transparency-1">
 </head>
 <body>
 <div class="grain"></div>
@@ -1104,22 +1104,15 @@ def render_home():
   <div class="hero-grid"></div>
   <div class="orb-1 hero-orb"></div><div class="orb-2 hero-orb"></div><div class="orb-3 hero-orb"></div>
   <div class="wrap">
-    <span class="eyebrow">Independent Web3 Publication</span>
     <h1>Master the <span class="grad-text">on-chain world</span> — without the noise.</h1>
     <p class="lead">In-depth guides on DeFi, blockchain development, crypto tax &amp; compliance, and Web3 gaming. Written for people who want to understand how it actually works.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="/defi/">Start Learning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-ghost" href="/search/">Search 40+ Guides</a>
     </div>
-    <div class="stats-strip reveal">
-      <div class="stat"><b>40+</b><span>In-depth guides</span></div>
-      <div class="stat"><b>4</b><span>Expert tracks</span></div>
-      <div class="stat"><b>100%</b><span>Independent research</span></div>
-      <div class="stat"><b>0</b><span>Sponsored shilling</span></div>
-    </div>
   </div>
 </section>
-<section><div class="wrap">
+<section class="track-section"><div class="wrap">
   <div class="section-head"><div><h2>Choose your track</h2><p class="sub">Four deep libraries, one standard: clarity over hype.</p></div></div>
   {cat_cards()}
 </div></section>
@@ -1127,7 +1120,7 @@ def render_home():
   <div class="section-head"><div><h2>Featured guide</h2></div></div>
   {feature_card(featured)}
 </div></section>
-<section style="padding-top:0"><div class="wrap">
+<section class="latest-section" style="padding-top:0"><div class="wrap">
   <div class="section-head"><div><h2>Latest from the library</h2><p class="sub">Fresh research across all four tracks.</p></div><a class="section-link" href="/search/">Browse everything →</a></div>
   <div class="card-grid">{"".join(post_card(a) for a in latest)}</div>
 </div></section>
