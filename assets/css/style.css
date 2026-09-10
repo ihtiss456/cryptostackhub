@@ -113,13 +113,15 @@ section{padding:72px 0}
 .hero{
   position:relative;padding:126px 0 104px;overflow:hidden;isolation:isolate;
   background:
+    radial-gradient(ellipse 90% 70% at 50% 0%,rgba(45,212,191,.10) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 60% at 85% 20%,rgba(139,92,246,.10) 0%,transparent 55%),
     linear-gradient(180deg,rgba(7,10,18,.55) 0%,rgba(7,10,18,.66) 58%,rgba(7,10,18,.86) 100%),
-    url("/attached_assets/ChatGPT_Image_Sep_7,_2026,_04_37_14_PM_1788781049159.png") center/cover no-repeat;
+    #070a12;
 }
-.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;z-index:-1;animation:drift 16s ease-in-out infinite alternate}
-.orb-1{width:480px;height:480px;background:rgba(94,234,212,.16);top:-140px;left:-120px}
-.orb-2{width:420px;height:420px;background:rgba(139,92,246,.18);top:-80px;right:-100px;animation-delay:-6s}
-.orb-3{width:360px;height:360px;background:rgba(96,165,250,.12);bottom:-180px;left:38%;animation-delay:-11s}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.85;z-index:-1;animation:drift 16s ease-in-out infinite alternate}
+.orb-1{width:480px;height:480px;background:rgba(94,234,212,.32);top:-140px;left:-120px}
+.orb-2{width:420px;height:420px;background:rgba(139,92,246,.35);top:-80px;right:-100px;animation-delay:-6s}
+.orb-3{width:360px;height:360px;background:rgba(96,165,250,.26);bottom:-180px;left:38%;animation-delay:-11s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,36px) scale(1.12)}}
 .hero-grid{position:absolute;inset:0;z-index:-1;opacity:.35;
   background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
